@@ -1,1 +1,80 @@
+## Change the directory to your home directory
+cd
 
+## Print out your current directory
+pwd
+
+## Create a folder named Algo1
+mkdir Algo1
+
+## Within Algo1, create subfolder named config,bin,logs, and scripts
+mkdir config
+mkdir bin
+mkdir logs
+mkdir scripts
+
+## Within config create empty files named config.config and variables
+cd ~/Algo1/config
+touch config.config,variables
+
+## Within scripts, create empty files named start.sh, stop.sh and admin.sh
+cd ~/Algo1/scripts
+touch start.sh, stop.sh, admin.sh
+
+## Within logs, create an empty file named today.log
+cd ~/Algo1/logs
+touch today.log
+
+## Go back to your home directory
+cd
+
+## Long list everything recursively
+ls -r
+
+## Remove the file named variables in the config directory
+rm Algo1/config/variables
+
+## Remove the bin directory that you previously created 
+rmdir Algo1/bin
+
+## Change back to your home directory
+cd
+
+## Create the bin directory again within Algo1
+mkdir Algo1/bin
+
+## Create a directory in the logs folder named oldlogs
+mkdir Algo1/logs/oldlogs
+
+## Within oldlogs, create folders named 2019, 2018, and 2017
+mkdir Algo1/logs/oldlogs/2019 
+mkdir Algo1/logs/oldlogs/2018 
+mkdir Algo1/logs/oldlogs/2017
+
+## Within 2017, create an empty file named 2017.log
+touch Algo1/logs/oldlogs/2017/2017.log
+
+## Within 2018, create an empty file named 2018.log
+touch Algo1/logs/oldlogs/2018/2018.log
+
+## Within 2019, create an empty file named 2019.log
+touch Algo1/logs/oldlogs/2019/2019.log
+
+## Change back to your home directory
+cd
+
+## Remove oldlogs using one command
+rm -r Algo1/logs/oldlogs
+
+## Ensure you are in your home directory
+cd
+
+## Search for all files in your home directory that end in .sh
+find ~ -name *.sh
+
+## Go into the scripts directory and use a command to remove both the start and stop script without specifying each file seperately: 
+cd ~/Algo1/scripts
+rm s*.sh
+
+## Run the following command to store your results in the directory the trainer has provided - substitute your name and the date in your file.
+history > Gerald.072122.module3
