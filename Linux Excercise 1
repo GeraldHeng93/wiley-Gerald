@@ -1,1 +1,14 @@
 pwd
+cd /var/log
+cd ..
+pwd
+ls
+ls -l
+ls -ltra
+cd
+cd /home
+cd ..
+ls --help
+cd /var
+ls -S
+uname -a
