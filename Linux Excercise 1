@@ -36,7 +36,7 @@ cd /home
 
 ##Go up a level in directory structure
 
-cd ../
+cd ..
 
 ##Find out more information about the ls command
 
