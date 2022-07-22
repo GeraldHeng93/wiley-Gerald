@@ -8,7 +8,7 @@ echo $STOCK
 
 ##Change the value of the variable STOCK to be the previous value with _US appended onto the end
 
-STOCK="AAPL_US"
+STOCK+="_US"
 
 ##Create a new variable named PRICE with value 290.84
 
