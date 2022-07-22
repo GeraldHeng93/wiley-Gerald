@@ -16,7 +16,7 @@ PRICE=290.84
 
 ##Print out to the screen a sentence ‘The current price of is ’ where you call the variables and get their values
 
-echo The current price of $STOCK is $PRICE
+echo "The current price of $STOCK is $PRICE"
 
 ##Create a variable named WHOAMI and assign it your current username. Do this in one command.
 
