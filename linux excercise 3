@@ -109,7 +109,7 @@ pwd
 
 ##Remove the directory Payment1 along with all subdirectories
 
-rmdir -r ~/Payment1
+rm -rf Payment1
 
 ##Delete the cat.output file, but with a warning first to the user
 
