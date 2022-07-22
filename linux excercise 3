@@ -65,7 +65,7 @@ echo $PATH
 
 ##If you have Algo1 still created from previous exercises, remove the directory structure and all files within it
 
-rmdir -r ~/Algo1
+rm -rf Algo1
 
 ##Make a directory named Payment1
 
