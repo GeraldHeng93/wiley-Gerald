@@ -129,11 +129,11 @@ echo $MYTEMP
 
 ##Now set the value of $MYTEMP to nothing
 
-unset $MYTEMP
+unset MYTEMP
 
 ##Remove the temp directory that you created
 
-rmdir ~/home/temp
+rm -rf temp
 
 ##Run the following command to store your results in the specified directory the trainer gave. Replace the name and date with the correct values:
 
