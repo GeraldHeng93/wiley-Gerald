@@ -117,11 +117,11 @@ rm -i cat.output
 
 ##Create a directory named temp
 
-mkdir ~/home/temp
+mkdir 
 
 ##Set a variable named MYTEMP that references the new temp directory you just created
 
-export MYTEMP=$MYTEMP: ~/home/temp
+export MYTEMP=$MYTEMP
 
 ##Run a command to see the value of the MYTEMP variable
 
