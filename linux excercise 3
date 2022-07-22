@@ -56,4 +56,4 @@ echo $PATH
 
 ##Append your newly created script directory to your path variable
 
-PATH=$PATH:/scripts/
+export PATH=$PATH:/scripts/
