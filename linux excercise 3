@@ -57,3 +57,84 @@ echo $PATH
 ##Append your newly created script directory to your path variable
 
 export PATH=$PATH:/scripts/
+
+
+##Check you can see your new path appended to the end of the path variable
+
+echo $PATH
+
+##If you have Algo1 still created from previous exercises, remove the directory structure and all files within it
+
+rmdir -r ~/Algo1
+
+##Make a directory named Payment1
+
+mkdir Payment1
+
+##Within Payment1, make three directories named logs, configuration, and scripts
+
+mkdir ~/Payment1/logs ~/Payment1/configuration ~/Payment1/scripts
+
+##Within scripts, create an empty file named start.sh
+
+touch ~/Payment1/scripts/start.sh
+
+##Within configuration, create an empty file named instance.properties
+
+touch ~/Payment1/configuration/instance.properties
+
+##Give everyone permission to read the instance.properties file, but assign write and execute permissons only to yourself
+
+sudo chmod 744 ~/Payment1/configuration/instance.properties
+
+##Set permissions on the file start.sh so that everyone can execute and so that the group and owner can read and write
+
+sudo chmod 771 ~/Payment1/scripts/start.sh
+
+##Direct the output of man cat into a file in your home directory named cat.output
+
+man cat > cat.output
+
+##Change the permission of that file so everyone can read it but only the group can write and execute
+
+sudo chmod 774 cat.output
+
+##Go back to your home directory
+
+cd
+
+##Prove your location
+
+pwd
+
+##Remove the directory Payment1 along with all subdirectories
+
+rmdir -r ~/Payment1
+
+##Delete the cat.output file, but with a warning first to the user
+
+rm -i cat.output
+
+##Create a directory named temp
+
+mkdir ~/home/temp
+
+##Set a variable named MYTEMP that references the new temp directory you just created
+
+export MYTEMP=$MYTEMP: ~/home/temp
+
+##Run a command to see the value of the MYTEMP variable
+
+echo $MYTEMP
+
+##Now set the value of $MYTEMP to nothing
+
+unset $MYTEMP
+
+##Remove the temp directory that you created
+
+rmdir ~/home/temp
+
+##Run the following command to store your results in the specified directory the trainer gave. Replace the name and date with the correct values:
+
+history > Gerald.220722.module4
