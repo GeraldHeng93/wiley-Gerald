@@ -8,6 +8,7 @@ pwd
 mkdir Algo1
 
 ## Within Algo1, create subfolder named config,bin,logs, and scripts
+cd Algo1
 mkdir config
 mkdir bin
 mkdir logs
@@ -15,7 +16,7 @@ mkdir scripts
 
 ## Within config create empty files named config.config and variables
 cd ~/Algo1/config
-touch config.config,variables
+touch config.config variables
 
 ## Within scripts, create empty files named start.sh, stop.sh and admin.sh
 cd ~/Algo1/scripts
@@ -29,7 +30,7 @@ touch today.log
 cd
 
 ## Long list everything recursively
-ls -r
+ls -l -r
 
 ## Remove the file named variables in the config directory
 rm Algo1/config/variables
