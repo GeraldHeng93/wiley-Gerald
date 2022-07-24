@@ -71,7 +71,7 @@ rm -r Algo1/logs/oldlogs
 cd
 
 ## Search for all files in your home directory that end in .sh
-find ~ -name *.sh
+find -name *.sh
 
 ## Go into the scripts directory and use a command to remove both the start and stop script without specifying each file seperately: 
 cd ~/Algo1/scripts
