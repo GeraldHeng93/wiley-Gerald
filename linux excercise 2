@@ -20,7 +20,7 @@ touch config.config variables
 
 ## Within scripts, create empty files named start.sh, stop.sh and admin.sh
 cd ~/Algo1/scripts
-touch start.sh, stop.sh, admin.sh
+touch start.sh stop.sh admin.sh
 
 ## Within logs, create an empty file named today.log
 cd ~/Algo1/logs
