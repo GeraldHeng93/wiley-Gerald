@@ -53,7 +53,7 @@ cd
 traceroute yahoo.com > yahoo.route
 
 ##View the file using less and see how many hops it took to get there.
-24
+21
 
 ##Create a soft link named route to your network route.
 ln -s yahoo.route route
