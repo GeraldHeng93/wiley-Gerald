@@ -40,10 +40,10 @@ top -u root
 
 ##Experiment with the following commands while running top and note your observations:
 
-###z -> highlights running process and bring it to the top
-###c -> show the processes aboslute path
-###Shift+P ->  sort the processes by CPU %
-###k -> prompts the process ID to kill
+### z -> highlights and bring running process to the top
+### c -> shows processes aboslute path
+### Shift+P ->  sort the processes by CPU %
+### k -> prompts the process ID to kill
 
 ##Run a command to check network connectivity between your Linux session and yahoo.com.
 ping yahoo.com
