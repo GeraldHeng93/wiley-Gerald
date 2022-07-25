@@ -71,10 +71,14 @@ cat fixlog20220722082147.log|grep "39=0" > ~/newOrders.log
 vi newOrders.log
 
 ##Duplicate the first line in the file.
+
+### (Ensure in escape mode)
 yy 
 p 
 
 ##Go to the fifth line in the file and duplicate it also.
+
+### (Ensure in escape mode)
 :5 
 yy
 p
