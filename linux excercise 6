@@ -58,7 +58,7 @@ mkdir ~/disk_output
 tar -xzvf disk.tar.gz -c ~/disk_output
 
 ## Go back to your home directory and run a command to g-zip your disk_output directory. Ensure it recursively compresses everything.
-tar cvzf disk_output.tar.gz ./disk_output
+tar cvzf disk_output.tar.gz ~/disk_output
 
 ## Run the following command to put your results in the directory specified by your instructor.
 history > Gerald.25.7.22.module7
