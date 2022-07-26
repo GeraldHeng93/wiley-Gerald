@@ -55,7 +55,7 @@ tar -czvf disk.tar.gz ./
 mkdir ~/disk_output
 
 ## Uncompress your tarball to the directory you just created.
-tar -xzvf disk.tar.gz ~/disk_output
+tar -xzvf disk.tar.gz -c ~/disk_output
 
 ## Go back to your home directory and run a command to g-zip your disk_output directory. Ensure it recursively compresses everything.
 gzip -r output.tar.gz ~/disk_output 
