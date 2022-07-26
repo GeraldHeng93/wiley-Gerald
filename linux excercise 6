@@ -6,10 +6,10 @@ cd
 df -h > filesystem.usage
 
 ##Show the disk usage for your home directory.
-df /
+df 
 
 ##Show the disk usage for your home directory in human-readable format and add it a file named disk.usage in your home directory.
-df -h / > disk.usage
+df -h  > disk.usage
 
 ##Run a disk check specifically showing output for all files and folders in human-readable format. Put the results into usage2 in your home directory.
 du -ah > usage2
