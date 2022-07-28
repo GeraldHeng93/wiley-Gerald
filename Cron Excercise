@@ -14,7 +14,7 @@
 0,30 9-16 * * 1,3,5 /home/ubuntu/fixGenerator.sh
 
 ## Set up the script to run every other hour every day.
-0 */2 * * * /home/ubuntu/fixGenerator.sh
+0 * * * * /home/ubuntu/fixGenerator.sh
 
 ## Set up the script to run on May 4th at midday.
 0 12 4 5 * /home/ubuntu/fixGenerator.sh 
