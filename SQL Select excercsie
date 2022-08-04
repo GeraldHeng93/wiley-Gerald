@@ -1,0 +1,166 @@
+##Activity 1
+
+SELECT * 
+FROM Exercise;
+
+#Activity 2
+
+SELECT *
+FROM Client;
+
+##Activity 3
+
+SELECT *
+FROM Client
+WHERE City = 'Metairie';
+
+##Activity 4 
+
+SELECT *
+FROM Client
+WHERE ClientId = '818u7faf-7b4b-48a2-bf12-7a26c92de20c';
+##--no client with that id
+
+##Activity 5
+
+SELECT Count(*)
+FROM Goal;
+
+####IF WANT TO SEE THE TABLE ###
+SELECT *
+FROM Goal;
+
+
+
+##Activity 6
+
+SELECT Name,
+LevelId
+FROM Workout;
+
+##Activity 7
+
+SELECT Name,
+LevelId,
+Notes
+FROM Workout
+WHERE LevelId = 2;
+
+##Activity 8
+
+SELECT FirstName,
+LastName,
+City
+FROM Client
+WHERE City in ('Metairie','Kenner','Gretna');
+
+##Activity 9
+
+SELECT FirstName,
+LastName,
+BirthDate
+FROM Client
+WHERE birthdate LIKE '198%';
+#Activity 10
+
+Select Firstname,
+LastName,
+BirthDate
+FROM Client
+WHERE birthdate BETWEEN '1980-01-01 'AND '1989-12-31';
+
+## METHOD 2
+SELECT FirstName,
+LastName,
+BirthDate
+FROM Client
+WHERE BirthDate >= '1980-01-01' AND BirthDate <'1990-01-01';
+
+##Activity 11
+
+SELECT Count(*)
+FROM Login
+WHERE EmailAddress LIKE '%.gov';
+
+‘—to VIEW THE TABLE AS PER THE EXERCISE 
+SELECT ClientID,
+EmailAddress,
+passwordHash
+FROM Login
+WHERE EmailAddress LIKE '%.gov';
+
+
+
+##Activity 12
+
+SELECT Count(*)
+FROM Login
+WHERE EmailAddress NOT LIKE '%.com';
+
+##—to VIEW THE TABLE AS PER THE EXERCISE 
+SELECT ClientID,
+EmailAddress,
+passwordHash
+FROM Login
+WHERE EmailAddress NOT LIKE '%.com';
+
+
+##Activity 13
+
+SELECT FirstName,
+LastName
+FROM Client
+WHERE Birthdate IS NULL;
+
+##Activity 14
+
+SELECT Name
+FROM ExerciseCategory
+WHERE ParentCategoryId IS NOT NULL;
+
+##Activity 15
+
+SELECT Name,
+Notes
+FROM Workout
+WHERE LevelId = 3
+AND notes LIKE '%you%';
+
+##Activity 16
+
+SELECT FirstName,
+LastName,
+City
+FROM Client
+WHERE (LastName LIKE 'L%'
+OR LastName LIKE 'N%'
+OR LastName LIKE 'M%')
+AND City = 'LaPlace'
+#Activity 17
+
+SELECT InvoiceId, 
+Description, 
+Price, 
+Quantity, 
+ServiceDate, 
+Price * Quantity AS line_item_total
+FROM invoicelineitem
+WHERE (Price * Quantity) BETWEEN 15 AND 25;
+
+##Activity 18
+SELECT *
+FROM Login
+WHERE clientid=(
+SELECT clientid 
+FROM Client
+WHERE firstname='Estrella' AND lastname='Bazely');
+
+##Activity 19
+
+SELECT Name
+FROM Goal
+WHERE GoalId IN (
+SELECT GoalId
+FROM WorkoutGoal 
+WHERE WorkoutId = (select WorkoutId from Workout where `name`='This is Parkour')
+);
