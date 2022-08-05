@@ -1,0 +1,230 @@
+USE PersonalTrainer;
+
+-- Select all columns from ExerciseCategory and Exercise.
+-- The tables should be joined on ExerciseCategoryId.
+-- This query returns all Exercises and their associated ExerciseCategory.
+-- 64 rows
+
+SELECT *
+FROM ExerciseCategory C
+INNER JOIN Exercise E
+	ON C.ExerciseCategoryId = E.ExerciseCategoryId;
+
+--------------------
+    
+-- Select ExerciseCategory.Name and Exercise.Name
+-- where the ExerciseCategory does not have a ParentCategoryId (it is null).
+-- Again, join the tables on their shared key (ExerciseCategoryId).
+-- 9 rows
+SELECT c.name,
+e.name
+FROM ExerciseCategory c
+INNER JOIN Exercise e
+ON  c.ExerciseCategoryId = e.ExerciseCategoryId
+WHERE  c.ParentCategoryId is NULL;
+--------------------
+
+-- The query above is a little confusing. At first glance, it's hard to tell
+-- which Name belongs to ExerciseCategory and which belongs to Exercise.
+-- Rewrite the query using an aliases. 
+-- Alias ExerciseCategory.Name as 'CategoryName'.
+-- Alias Exercise.Name as 'ExerciseName'.
+-- 9 rows
+SELECT c.name AS CategoryName ,
+e.name AS ExerciseName
+FROM  ExerciseCategory c
+INNER JOIN Exercise e
+ON c.ExerciseCategoryId = e.ExerciseCategoryId
+WHERE c.ParentCategoryId is NULL;
+--------------------
+
+
+-- Select FirstName, LastName, and BirthDate from Client
+-- and EmailAddress from Login 
+-- where Client.BirthDate is in the 1990s.
+-- Join the tables by their key relationship. 
+-- What is the primary-foreign key relationship?
+-- 35 rows
+SELECT  CL.FirstName,
+CL.LastName,
+CL.BirthDate,
+LG.EmailAddress
+FROM Client CL 
+INNER JOIN Login LG
+ON CL.ClientId = LG.ClientId
+WHERE CL.BirthDate like '199%';
+
+--------------------
+
+-- Select Workout.Name, Client.FirstName, and Client.LastName
+-- for Clients with LastNames starting with 'C'?
+-- How are Clients and Workouts related?
+-- 25 rows
+SELECT CL.FirstName,
+CL.LastName,
+W.Name,
+FROM Client CL
+INNER JOIN ClientWorkout CW
+ON CL.ClientId = CW.ClientID
+INNER JOIN  Workout W 
+ON CW.WorkoutId = W.WorkoutId
+where CL.LastName like 'C%';
+--------------------
+
+-- Select Names from Workouts and their Goals.
+-- This is a many-to-many relationship with a bridge table.
+-- Use aliases appropriately to avoid ambiguous columns in the result.
+SELECT W.Name,
+G.Name
+FROM Workout W
+INNER JOIN  WorkoutGoal WG
+ON W.WorkoutId = WG.WorkoutId
+INNER JOIN  Goal G
+on G.GoalId = WG.GoalId;
+--------------------
+
+-- Select FirstName and LastName from Client.
+-- Select ClientId and EmailAddress from Login.
+-- Join the tables, but make Login optional.
+-- 500 rows
+
+SELECT  CL.FirstName,
+CL.LastName,
+L.ClientId,
+L.EmailAddress
+from Client CL
+LEFT OUTER JOIN Login L
+on CL.CLientId = l.ClientId;
+--------------------
+
+-- Using the query above as a foundation, select Clients
+-- who do _not_ have a Login.
+-- 200 rows
+
+SELECT CL.ClientId
+CL.FirstName,
+CL.LastName
+FROM Client CL
+LEFT OUTER  JOIN Login L
+ON CL.CLientId = L.ClientId
+WHERE L.CLientID is NULL;
+--------------------
+
+-- Does the Client, Romeo Seaward, have a Login?
+-- Decide using a single query.
+-- nope :(
+
+SELECT L.ClientId
+FROM Client CL
+LEFT OUTER JOIN Login L
+ON CL.ClientId = L.ClientId
+WHERE CL.FirstName = 'Romeo' and CL.LastName = 'Seaward';
+--------------------
+
+-- Select ExerciseCategory.Name and its parent ExerciseCategory's Name.
+-- This requires a self-join.
+-- 12 rows
+SELECT P.Name ParentExerciseCategory, 
+C.name ExerciseCategory
+FROM ExerciseCategory C
+INNER JOIN ExerciseCategory P
+	ON C.ParentCategoryId = P.ExerciseCategoryId;
+
+--------------------
+    
+-- Rewrite the query above so that every ExerciseCategory.Name is
+-- included, even if it doesn't have a parent.
+-- 16 rows
+select P.Name Categoryparent,
+C.`Name` Category
+FROM ExerciseCategory C
+LEFT JOIN  ExerciseCategory P
+on C.ParentCategoryId = P.ExerciseCategoryId;    
+
+--------------------
+    
+-- Are there Clients who are not signed up for a Workout?
+-- 50 rows
+SELECT CL.FirstName,
+CL.LastName
+FROM Client CL
+LEFT JOIN  ClientWorkout CW
+ON CL.ClientId = CW.ClientId
+WHERE CW.WorkoutId is NULL;
+--------------------
+
+-- Which Beginner-Level Workouts satisfy at least one of Shell Creane's Goals?
+-- Goals are associated to Clients through ClientGoal.
+-- Goals are associated to Workouts through WorkoutGoal.
+-- 6 rows, 4 unique rows
+SELECT W.WorkoutID, 
+W.Name WorkoutName
+FROM Client C
+INNER JOIN ClientGoal CG
+ ON C.ClientId = CG.ClientID
+INNER JOIN WorkoutGoal WG
+ON CG.GoalId =  WG.GoalId
+INNER JOIN Workout W 
+ON WG.WorkoutID = W.WorkoutID
+WHERE W.LevelId = 1 AND C.FirstName = 'Shell' AND C.LastName = 'Creane';
+--------------------
+
+-- Select all Workouts. 
+-- Join to the Goal, 'Core Strength', but make it optional.
+-- You may have to look up the GoalId before writing the main query.
+-- If you filter on Goal.Name in a WHERE clause, Workouts will be excluded.
+-- Why?
+-- 26 Workouts, 3 Goals
+SELECT W.name WorkoutName,
+G.name GoalName
+FROM Workout W
+LEFT JOIN WorkoutGoal WG
+ON W.WorkoutId = WG.WorkoutId and WG.GoalId=10
+LEFT JOIN  Goal G
+on G.GoalId = WG.GoalId;
+--------------------
+
+-- The relationship between Workouts and Exercises is... complicated.
+-- Workout links to WorkoutDay (one day in a Workout routine)
+-- which links to WorkoutDayExerciseInstance 
+-- (Exercises can be repeated in a day so a bridge table is required) 
+-- which links to ExerciseInstance 
+-- (Exercises can be done with different weights, repetions,
+-- laps, etc...) 
+-- which finally links to Exercise.
+-- Select Workout.Name and Exercise.Name for related Workouts and Exercises.
+
+SELECT W.Name WorkoutName, 
+E.Name ExerciseName
+FROM Workout W
+INNER JOIN WorkoutDay WD
+ON W.WorkoutId = WD.WorkoutId
+INNER JOIN WorkoutDayExerciseInstance WDEI
+ON WD.WorkoutDayId = WDEI.WorkoutDayId
+INNER JOIN ExerciseInstance EI
+ON WDEI.ExerciseInstanceId = EI.ExerciseInstanceId
+INNER JOIN Exercise E
+ON EI.ExerciseId = E.ExerciseId;
+--------------------
+   
+-- An ExerciseInstance is configured with ExerciseInstanceUnitValue.
+-- It contains a Value and UnitId that links to Unit.
+-- Example Unit/Value combos include 10 laps, 15 minutes, 200 pounds.
+-- Select Exercise.Name, ExerciseInstanceUnitValue.Value, and Unit.Name
+-- for the 'Plank' exercise. 
+-- How many Planks are configured, which Units apply, and what 
+-- are the configured Values?
+-- 4 rows, 1 Unit, and 4 distinct Values
+
+SELECT E.Name ExerciseName, 
+EIUV.Value, 
+U.Name UnitName
+FROM Exercise E
+INNER JOIN ExerciseInstance EI
+ON E.ExerciseId = EI.ExerciseId
+INNER JOIN ExerciseInstanceUnitValue EIUV
+ON EI.ExerciseInstanceId = EIUV.ExerciseInstanceId
+LEFT OUTER JOIN Unit U 
+On EIUV.UnitId = U.UnitId
+WHERE E.Name = 'Plank';
+
