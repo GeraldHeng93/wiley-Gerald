@@ -1,0 +1,231 @@
+#Activity 1
+
+#Create a computer program that performs the following steps:
+
+#Prompt the user for an integer and store the value in a variable.
+#Display the data type of the variable that holds the entered data.
+#Convert the value to an integer type and store the converted value in a new variable.
+#Display the value and type of the new variable in a single sentence. (For example, "The value is 8 with type integer.")
+
+
+num = input("Please enter a number: ")
+print("You entered the type", type(num).__name__)
+newNum = int(num)
+print("The value is ", num ,"with type", type(newNum).__name__)
+
+#Run the program and enter a float value at the prompt. What is its value in the last step?   => Error 
+#Refactor the program, using a float instead of an integer. What happens if you enter an integer rather than a float at the prompt? => Str and then float
+
+
+num = input("Please enter a number: ")
+print("You entered the type", type(num).__name__)
+newNum = float(num)
+print("The value is ", num ,"with type", type(newNum).__name__)
+
+
+#Activity 2
+#Update the code below so that the result is equal to 576. 
+#Do not change any of the existing values or operators or the order 
+#in which they appear.
+
+
+# do not change the order in which the numbers and operators appear in the next line
+result = (5 + 3) ** 2 * 9 
+
+
+
+
+#Activity 3
+#Create a computer program that prompts the user for a float number and 
+#returns the integer portion of the floating number.
+
+import math     
+
+val = float(input("Enter a floating number: "))
+print("converted  to integer :",math.floor(val))
+
+
+#Activity 4
+
+#Write a computer program that calculates and displays the current value of a 
+#deposit for a given initial deposit, interest rate, how many times interest is 
+#calculated per year, and the number of years since the initial deposit.
+
+#The program should prompt the user for each of the values and use the following 
+#formula to calculate the current value of the deposit:
+
+#V -- value
+#P -- initial deposit
+#r -- interest rate as a fraction (eg 0.05)
+#n -- the number of times per year interest is calculated
+#t -- the number of years since the initial deposit
+#V = P(1 + r/n)^nt
+
+P = float(input("Enter initial deposite: "))
+r = float(input("interest rate as a fraction (eg 0.05): "))
+n = int(input("the number of times per year interest is calculated: "))
+t = int(input("the number of years since the initial deposit: "))
+
+V=((1+ r/n)**(float(n)*float(t)))*P
+
+print("total value after interest from the keyed in data is", round(V,2))
+
+
+#activity 5
+#Write a computer program that prompts the user for a principal amount, the rate 
+#of interest, and the number of days for a loan and then calculates and returns 
+#the simple interest for the life of the loan. Use the formula:
+
+p=float(input("Enter principle: "))
+rate = float(input("interest rate (eg 5% (key in only the number)): "))
+days = int(input("the number of days for interest calculation: "))
+
+
+interest=p*rate*0.01*(days/365)
+
+print("the simple interest gain is",round(interest,2))
+
+
+#activity 6
+
+#Create a computer program that displays three 
+#statements that evaluate to True and three statements that evaluate to False.
+
+#TRUE 1
+a = 2
+b = 3
+
+
+
+print( "Statement 1", "a is", a, " b is",  b, " a is lesser than b its ", a<b  )
+
+#TRUE 2
+
+a = 2
+b = 3
+
+
+
+print("Statement 2","a is", a, " b is",  b, " a is lesser than b its ", a<b  )
+
+
+#TRUE 3 
+
+a = 3
+b = 2
+
+
+
+print( "Statement 3","a is", a, " b is",  b, " a is bigger than b its ", a>b  )
+
+
+#false 1
+
+a = 2
+b = 2
+
+
+
+print( "Statement 4","a is", a, " b is",  b, " a is not equal to b its ", a != b  )
+
+#false 2 
+
+a = 3
+b = 2
+
+
+
+print( "Statement 5","a is", a, " b is",  b, " a is smaller to b its ", a < b  )
+
+
+#false 3
+
+a = 2
+b = 3
+
+
+
+print( "Statement 6","a is", a, " b is",  b, " a is bigger to b its ", a > b  )
+
+
+
+#activity 7
+
+#Create a computer program that prompts the user for a number and calculates the following:
+
+#the boolean of the number entered
+#the binary equivalent of the number entered
+#the square root of the number entered
+#The program should display the following to the user:
+
+#The number the user entered, in a phrase like, "You selected value."
+#The boolean of the number, in a phrase like, "The boolean of your number is value."
+#The binary equivalent of the number, in a phrase like, "The binary equivalent of your number is value"
+#The square root of the number, in a phrase like, "The square root of your number is value," with the value rounded to three decimal places.
+
+val = int(input("Eneter a integer "))
+print("You selected ",val)
+print("The boolean of your number is ",bool(val))
+print("The binary equivalent of your number is ",bin(val))
+print("The square root of your number is",round(val**0.5,3))
+
+
+#activity 8
+
+
+#Create a computer program that completes the following tasks:
+
+#It prompts the user for a series of 5 integers.
+#The user must be prompted for 5 numbers.
+#After the fifth entry, the program stops prompting for values and performs the following calculations:
+#the product of the integers
+#the average of the integers
+#the sum of the integers
+#After performing the calculations, the program should display the following to the user:
+#the values the user entered
+#each of the calculations, using a phrase that identifies the value
+
+
+
+import math
+
+val=[int(input("Input an integer ")) for i in range(5)]
+
+product=math.prod(val)
+
+totalval=sum(val)
+
+avg=sum(val) / len(val)
+
+print("You entered the values", *val)
+print("The product of the numbers is", product)
+print("The average of the numbers is", round(avg,2))
+print("The sum of the numbers is", totalval)
+
+
+
+
+
+#acitivtiy 9
+
+#Write a program that performs the following steps:
+
+#Start with a street address that includes a building/house number, the name of the street, and the type of street (e.g., Street, Avenue, Boulevard, etc.).
+#You can use any address you wish and abbreviations are acceptable.
+#An example is 25 Main Street.
+#Display the full address to the user.
+#Display the house number only in a phrase like, "The building or house number is 25."
+#Display the street name in a phrase like, "The street name is Main Street."
+
+
+add="119 Gerald's Street"
+
+print("The full address is ", add)
+print("The house number is ", add.split()[0])
+print("The full address is ", add.split()[1], add.split()[2])
+
+
+
+
+
+
