@@ -1,0 +1,128 @@
+#Acitivity 1
+#Write a program that asks the user how much money they have 
+#in their wallet. The program should output "You're rich!" if the user inputs $20 or more and "You're broke!" if the input is less than $20.
+
+
+
+wallet =float(input("Enter how much money you have in your wallet: "))
+if wallet>=20:
+  print("You're rich!")
+else:
+  print("You're broke!")
+
+
+
+#Acitivity 2
+
+#Write a program that performs the following steps:
+
+#Ask the user if they own any cats. (Yes/No answer)
+#Ask the user if they own any dogs. (Yes/No answer)
+#If the user responses indicate that they have both cats and dogs, output "You must really love pets!"
+#Otherwise, the output should be "Maybe you need more pets."
+#The last step will apply if the user has cats but not dogs, dogs but not cats, or neither cats nor dogs.
+
+#Write two different versions of this program, one that uses only if statements and another that uses if-else statements.
+
+#if ONLY 
+
+cat=(input("Do you own any cats?(Y/N)")).upper()
+dog=(input("Do you own any dogs?(Y/N)")).upper()
+
+if cat=="Y" and dog=="Y":
+  print("You must really love pets!")
+if cat=="N" or dog=="N":
+  print("Maybe you need more pets.")
+
+
+#IF/ELSE
+
+cat=(input("Do you own any cats?(Y/N)")).upper()
+dog=(input("Do you own any dogs?(Y/N)")).upper()
+
+if cat=="Y" and  dog=="Y":
+    print("You must really love pets!")
+else:
+      print("Maybe you need more pets.")
+
+
+#Acitivity 3
+#Create a computer program that asks the user a few questions to which the user will respond either True or False. 
+#Display all the questions with the correct answer and the user's answers at the end of the program, along with the user's the 
+#correct response rate (number of questions answered correctly/number of questions).
+
+
+
+results=0
+print ("It quiz time.")
+
+
+ans1=input("The Big Apple is a nickname given to Washington D.C in 1971. :").capitalize()
+
+if ans1=='True':
+  results+=1
+  print("Correct")
+else:
+    print("WRONG ANS")
+  
+ans2=input("Muddy York is a nickname for New York in the Winter :").capitalize()
+if ans2=='False':
+    results+=1
+    print("Correct")
+else:
+    print("WRONG ANS")
+
+ans3=input("Peanuts are not nuts? :").capitalize()
+if ans3=='True':
+    results+=1
+    print("Correct")
+else:
+    print("WRONG ANS")
+
+ans4=input("People may sneeze or cough while sleeping deeply? :").capitalize()
+if ans4=='False':
+    results+=1
+    print("Correct")
+else:
+    print("WRONG ANS") 
+   
+correct= results/4 * 100
+
+print("The answers are ('True', 'False', 'True', 'False')")
+print("your answers are", ans1,",", ans2,",", ans3,",",ans4)
+print("you scored ", results, "/4", " that is", correct ,"%")
+
+
+
+#Activity 6
+#Write a program that uses elif to produce five different possible outcomes based on a single user input.
+
+#Ask the user what season it is (fall, winter, spring, or summer).
+#If the user enters fall, output "I bet the leaves are pretty there!"
+#If the user enters winter, output "I hope you're ready for snow!"
+#If the user enters spring, output "I can smell the flowers!"
+#If the user enters summer, output "Make sure your AC is working!"
+#If the user enters a value that does not correspond to a season, output "I don't recognize that season."
+#The user should be able to enter the name of the season in any case and the program will still work.
+
+#Challenge: After you have the program working as describe above, modify the program so that the user can enter either "fall" or "autumn" and get the same result.
+
+
+
+
+
+
+season=input("What is the season? (fall, winter, spring, or summer) :").capitalize()
+if season== "Fall" or season== "Autumn":
+    print("I bet the leaves are pretty there!")
+elif season=='Winter':
+    print("I hope you're ready for snow")
+elif season=="Spring":
+    print("I can smell the flowers!")
+elif season=="Summer":
+    print("Make sure your AC is working!")  
+else:
+    print("I don't recognize that season.")
+
+
+
