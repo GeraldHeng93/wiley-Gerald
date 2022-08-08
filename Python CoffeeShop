@@ -1,0 +1,62 @@
+#Trying While to reject wrong selection
+
+price = 0
+
+size = (input("Do you want Small, Medium, or Large:\nSmall(S)\nMedium(M)\nLarge(L):\nSelection: ")).upper()
+#Below uses While loop to reject other thing then S,M,L 
+while size not in ["S", "M", "L"]:
+    print("Invalid Selection: Please enter your choice again")
+    size = (input("Select Cup:\nSmall(S)\nMedium(M)\nLarge(L):\nYour Choice: ")).upper()
+if size == "S":            
+    size = "small"
+    price = 2     
+elif size == "M":
+    size = "medium"        
+    price = 3            
+elif size == "L":
+    size = "large"    
+    price = 4            
+
+
+kind = (input("\nDo you want Brewed, Espresso, or Cold Press:\nBrewed(B)\nEspresso(E)\nCold Brew(C):\nYour Choice: ")).upper()
+
+#Below uses While loop to reject other thing then B E C
+while kind not in ["B", "E", "C"]:
+    print("Invalid Selection: Please enter your choice again")
+    kind = (input("Select kind:\nBrewed(B)\nEspresso(E)\nCold Brew(C):\nYour Choice: ")).upper()    
+if kind == "B":            
+    kind = "brewed"       
+elif kind == "E":       
+    kind = "espresso"
+    price = price + 0.5
+elif kind == "C":
+    kind = "cold brew"
+    price = price + 1
+
+
+flavor = (input("\nSelect flavor:\nHazelnut(H)\nVanilla(V)\nCaramel(C)\nNone(N):\nSelection: ")).upper()
+ #Below uses While loop to reject other thing then H V C
+while flavor not in ["H", "V", "C", "N"]: 
+    print("Invalid Selection: Please enter your choice again")
+    flavor = (input("Select flavor:\nHazelnut(H)\nVanilla(V)\nCaramel(C)\nNone(N):\nSelection: ")).upper()
+
+if flavor == "H":
+    flavor = "hazelnut"
+    price = price + 0.5
+elif flavor == "V":
+    flavor = "vanilla"
+    price = price + 0.5
+elif flavor == "C":
+    flavor = "caramel"
+    price = price + 0.5
+elif flavor == "N":
+    flavor = "no"
+
+
+print("You have asked for a " + size + " " + kind +  " coffee with " + flavor + " flavor")
+print("Your cup of coffee costs",  '%.2f'% price)
+print("The price with a tip is",  '%.2f'% (1.15*price))
+ 
+ 
+ 
+
