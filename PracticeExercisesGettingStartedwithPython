@@ -1,0 +1,161 @@
+#ACTIVITY 1 - 10 IS A REPEAT REFER TO OTHER FILES#
+
+
+#Activity 11
+
+
+
+firstname="Robert"
+lastname="Taylor"
+address="25 Main Street"
+city="Paterson"
+state="NJ"
+zip="07501"
+phone="201-857-5309"
+
+
+cng = (input("Which field would you like to change? First Name, Last Name, address, city, state, zip or phone ")).lower()
+if cng == "first name":
+    	firstname = input("What is the new first name :")
+    	print("The updated first name is", firstname)
+elif cng == "last name":
+    	lastname = input("What is the new last name :")
+    	print("The updated first name is ", lastname)
+elif cng == "address":
+    	address = input("What is the new address :")
+    	print("The updated address is ", address)
+elif cng == "city":
+    	city = input("What is the new city :")
+    	print("The updated city is ", city)
+elif cng == "state":
+    	state = input("What is the new state :")
+    	print("The updated state is ", state)
+elif cng == "zip":
+    	zip = input("What is the new zip :")
+    	print("The updated state is :", zip)
+elif cng == "phone":
+    	phone = input("What is the new phone :")
+    	print("The updated phone number is ", phone)
+else:
+	print("pls try again")
+	
+	
+print ("\n\nUpdated contact is")
+print("First name :",firstname)
+print("Last name :",lastname)
+print("Address :", address)
+print("city :",city)
+print("State :",state)
+print("Zip :", zip)
+print("Phone :",phone)
+
+
+
+
+
+
+
+
+
+
+#activity 12
+
+
+
+firstname = input("What is the first name :")
+    
+lastname = input("What is the last name :")
+
+address = input("What is the address :")
+    	
+city = input("What is the city :")
+    
+
+state = input("What is the state :")
+    
+
+zip = input("What is the zip :")
+    
+
+phone = input("What is the phone :")
+  
+
+print("Contact is ")
+print("First name :",firstname)
+print("Last name :",lastname)
+print("Address :", address)
+print("city :",city)
+print("State :",state)
+print("Zip :", zip)
+print("Phone :",phone)
+
+
+
+
+
+
+#Activity 13
+
+
+firstname = input("What is the first name :")
+    
+lastname = input("What is the last name :")
+
+address = input("What is the address :")
+    	
+city = input("What is the city :")
+    
+
+state = input("What is the state :")
+    
+
+zip = input("What is the zip :")
+    
+
+phone = input("What is the phone :")
+  
+
+print("Contact is ")
+print("First name :",firstname)
+print("Last name :",lastname)
+print("Address :", address)
+print("city :",city)
+print("State :",state)
+print("Zip :", zip)
+print("Phone :",phone)
+
+
+cng = (input("Which field would you like to change? First Name, Last Name, address, city, state, zip or phone ")).lower()
+if cng == "first name":
+    	firstname = input("What is the new first name :")
+    	print("The updated first name is", firstname)
+elif cng == "last name":
+    	lastname = input("What is the new last name :")
+    	print("The updated first name is ", lastname)
+elif cng == "address":
+    	address = input("What is the new address :")
+    	print("The updated address is ", address)
+elif cng == "city":
+    	city = input("What is the new city :")
+    	print("The updated city is ", city)
+elif cng == "state":
+    	state = input("What is the new state :")
+    	print("The updated state is ", state)
+elif cng == "zip":
+    	zip = input("What is the new zip :")
+    	print("The updated state is :", zip)
+elif cng == "phone":
+    	phone = input("What is the new phone :")
+    	print("The updated phone number is ", phone)
+else:
+	print("wrong input or no change is needed ")
+	
+	
+print ("\n\nUpdated contact is")
+print("First name :",firstname)
+print("Last name :",lastname)
+print("Address :", address)
+print("city :",city)
+print("State :",state)
+print("Zip :", zip)
+print("Phone :",phone)
