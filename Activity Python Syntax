@@ -1,0 +1,51 @@
+
+#Activity 1
+#part 1
+
+# display the text in quotation marks to an output block
+print('Python is fun!')
+
+#part 2
+
+# Display the text in quotation marks to an output block 
+# without moving any of the existing acode to a different line
+print('Python is fun!'); print('Python is also easy.')
+
+#part 3 
+
+# Change each variable name to an appropriate name for Python. 
+# Do not use the same variable name more than one time.
+fname = "Rebecca" # first name
+lname = "Roberts" # last name
+ 
+# After changing the variable names, update the code below 
+# to print out each name.
+print(fname)
+print(lname)
+
+
+
+
+Activityt 2
+
+Part 1 
+# Add a new line of code that displays the text in quotation marks 
+# to an output block without repeating the text in quotation marks.
+output = "I love Python!"
+print(output)
+
+part 2
+# Display only the text Python is fun! to an output block 
+# without deleting any of the existing code
+print("Python is fun!")
+#print("Python is also easy!")
+
+
+Acitivty 3
+#Create a script that prompts the user for the name of the state where they were born and the name of the state where they live now.
+#Save each value in its own variable and display the input values to the user.
+
+stateBorn=input("Input the name of the state where you were born: ")
+stateLive=input("Input the name of the state you are living in now: ")
+print("state you are born :", stateBorn)
+print("state you are living in now :", stateLive)
