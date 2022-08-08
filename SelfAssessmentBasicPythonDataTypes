@@ -1,0 +1,32 @@
+#Write a script that performs the following steps:
+
+#Collect the following individual pieces of data from the user:
+#First name
+#Last name
+#City where they live
+#Their hourly wage
+#The number of hours they work each week
+
+#Present the collected information based on the data input in a format like:
+
+#Hi, Firstname Lastname! How are you?
+#I hope the weather is nice in City.
+#Based on the information you provided, you earn X dollars per week, 
+#approximately Y dollars per month, and Z dollars per year.
+
+
+
+
+#Name: Gerald Heng
+#Date: 08/08/2022
+
+firstName=input("Enter your first name: ")
+lastName=input("Enter your last name: ")
+city=input("Enter the city you live in: ")
+hwage=float(input("Enter your hourly wage: "))
+hrs=int(input("Number of hours worked each week: "))
+wageWeek=hrs*hwage
+wageMonth= wageWeek*4
+wageYear=wageMonth*12
+
+print(f"\n\n\nHi {firstName.capitalize()} {lastName.capitalize()}! How are you?\nI hope the weather is nice in {city.capitalize()}\nBased on the info you provided, you earn ${wageWeek} per week,approximately ${wageMonth} per month and ${wageYear} per year")
