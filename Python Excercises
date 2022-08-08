@@ -17,9 +17,17 @@ if a<100 or b<10:
 
 else: 
 	print("first number is", a/b, "bigger then the second")
+	
+#Question 3:
+
+days=int(input("Key in the numbers of days: "))
+hours=24*days
+mins=60*hours
+secs=60*mins
+print(f"There are {hours} hours, {mins} mins and {secs} secs in {days} days")
 
 
-#question 3:
+#question 4:
 
 a = int (input("Ask the user to enter 1, 2, or 3 :"))
     
