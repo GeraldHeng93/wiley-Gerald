@@ -1,0 +1,153 @@
+#Activity 1
+#Prompt the user to answer a series of 3-5 questions about themselves (such as their name, their age, their birthday, or where they live)
+#and save the answers in a list. Display the results to the user.
+
+mylist = []
+name=input("name?")
+age=int(input("age?"))
+add=input("address?")
+mylist=[name,age,add]
+
+print("name:",mylist[0])
+print("age:",mylist[1])
+print("add:",mylist[2])
+
+#If want to print all print(mylist)
+
+#Activity 2
+#Present the user with an existing list of items (such as the list created in the previous activity) and prompt the user for 2-4 more items to add to the list. Update the list with the new items and display the updated list.
+
+mylist=["Gerald Heng",28,"Singapore SG"]
+
+print("name:",mylist[0])
+print("age:",mylist[1])
+print("add:",mylist[2])
+
+
+hobby=input("hobby?")
+firstjob=input("Firstjob?")
+mylist.append(hobby)
+mylist.append(firstjob)
+
+
+print(mylist)
+
+
+
+#Activity 3
+#Present the user with a list of 7-9 items (such as the list created in the previous activities) and prompt them to enter one item to delete from the list. Delete the named item from the list and display the updated list.
+
+
+mylist=["Gerald Heng",28,"Singapore SG","climbing","Floor cleaner","DREAM","KING","HENG"]
+
+
+print(mylist)
+usr = input("Please choose one item to be delete  from the above Case sensitive:")
+
+for ctr in mylist:
+    if ctr == usr:
+        mylist.remove(usr)
+        break
+    else:
+        if(mylist.index(ctr) == len(mylist) -1):
+            print("Item not in list")
+
+
+
+print("updated list :", mylist)
+
+
+
+#Activity 4
+#Present the user with a list of 7-9 items (such as the list created in the previous activities) and prompt them to select one item from the list to update, along with the new value for that item. Change the item's value and display the new list to the user.
+
+
+mylist=["Gerald Heng",28,"Singapore SG","climbing","Floor cleaner","DREAM","KING","HENG"]
+
+
+print(mylist)
+usr = input("Please choose one item to update from the item above Case sensitive:")
+
+for ctr in mylist:
+    if ctr == usr:
+        chng = input("What u want to replace with:")
+        
+        i = mylist.index(ctr)
+        mylist = mylist[:i]+[chng]+mylist[i+1:]
+        print("updated list :", mylist)
+        break
+    else:
+        if(mylist.index(ctr) == len(mylist) -1):
+            print("Item not in list")
+
+
+
+#Activity 5
+#Create four tuples:
+
+#One tuple with a person's first name and last name
+#A second tuple with the person's current profession
+#A third tuple with the person's current address
+#A fourth tuple with the person's previous address
+#Combine all tuples into a new, single tuple that contains all items from the original tuples.
+
+
+tup1 = ('Gerald', 'Heng')
+tup2 = ('wiley Trainee',)
+tup3 = ('Singapore Drive',)
+tup4 = ('Malaysia Drive',)
+
+newTup = tup1 + tup2 + tup3 + tup4
+
+print(newTup)
+
+
+
+#Activity 6
+#Using the final tuple from the previous activity, write a program that performs the following steps:
+
+#Display the tuple to the user.
+#Prompt the user to enter a value that should be changed.
+#Prompt the user to enter the updated value for that item.
+#Update the value and display the updated tuple to the user.
+
+
+
+
+
+
+
+
+tup1 = ('Gerald', 'Heng')
+tup2 = ('wiley Trainee',)
+tup3 = ('Singapore Drive',)
+tup4 = ('Malaysia Drive',)
+
+newTup = tup1 + tup2 + tup3 + tup4
+
+print("tupple values \n", newTup)
+
+# WE CANNOT CHANGE CONTENT OF TUPLE 
+#CHnage to list 
+
+mylist = list(newTup)
+
+
+usr = input("Please choose one item to update from the item above Case sensitive:")
+
+for ctr in mylist:
+    if ctr == usr:
+        chng = input("What u want to replace with:")
+        
+        i = mylist.index(ctr)
+        mylist = mylist[:i]+[chng]+mylist[i+1:]
+        print("updated list :", mylist)
+        break
+    else:
+        if(mylist.index(ctr) == len(mylist) -1):
+            print("Item not in Tup")
+            
+            
+            
+newTup = tuple(mylist) 
+print("tuple values \n", newTup)
