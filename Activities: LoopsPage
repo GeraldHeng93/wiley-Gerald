@@ -1,0 +1,282 @@
+#Exercise 1: Separating Your Fruits
+#Given the list fruit_list, write a script that iterates through the list and prints each item
+#on a separate line:
+
+
+fruit_list = ["apple", "banana", "cherry", "gooseberry", "kumquat", "orange",
+"pineapple"]
+# your code here
+
+
+for ctr in fruit_list:
+    print(ctr)
+
+
+
+#Activity 2
+#Write a Python script that asks the user for a string and displays the characters of the string to the user, with each character on a new line.
+
+#For example, if the input is Hello, the output should be:
+
+message = input("Eneter a message: ")
+ 
+for ctr in message: 
+    print(ctr)
+
+#Activity 3
+#Write a Python script that computes the length of a string without using the len() function.
+
+message = input("Eneter a message: ")
+count = 0 
+for ctr in message:
+    count += 1
+print("the lenthg of the message is", count)
+
+
+
+
+
+#Activity 4
+#Create a program that takes an input list of strings, identifies all the strings with two or
+#more characters, and stores the results in another list. For example, the following list
+#a = ["a", "bc", "rye", "hello", "c", ""]
+#would produce the following output:
+#["bc", "rye", "hello"]
+
+
+#a = ["a", "bc", "rye", "hello", "c", ""]
+
+
+
+mylist = []
+a = ["a", "bc", "rye", "hello", "c", ""]
+for ctr in a:
+    if (len(ctr) > 2):
+        mylist.append(ctr)
+print(mylist)      
+
+
+
+#Activity 5
+#Write two scripts, each of which displays all numbers divisible by 50 between 100 and 1000 (inclusive).
+
+#Use the range function with for in one script.
+#Use while without range in the other script.
+#Both scripts should have identical outputs.
+
+
+for i in range(100,1001): 
+     if i % 50 == 0: 
+        print(i)
+
+# script 2: while
+
+i = 100
+while (i<=1000):
+    if i % 50 == 0: 
+        print(i)
+    i += 1
+
+
+#Activity 6
+#Create a script that computes the sum of all numbers between 0 and 100.
+
+sum = 0
+
+for i in range(0,101): 
+    sum += i
+
+print(sum)
+
+
+
+#Activity 7
+#Create a script that computes the factorial of any given number.
+
+num = int(input("input a number: "))
+factorial = 1
+
+if num < 0:
+   print("cannot factorial negative number")
+elif num == 0:
+   print("The factorial of 0 is 1")
+else:
+    for i in range(1,num + 1):
+       factorial = factorial*i
+    print("The factorial of",num,"is",factorial)
+
+
+
+#Activity 8
+
+#Starting with the defined fruit_list in the following code block, update the script to perform
+#the following tasks:
+#•• Prompt the user to enter the name of a fruit.
+#•• If the fruit is in fruit_list, display an appropriate message to tell the user its
+#index value in the list.
+#•• If the fruit is not in fruit_list, display an appropriate message to the user and
+#prompt them to try again.
+#•• The script should repeat itself until the user enters a stop word at the prompt.
+#fruit_list = ["apple", "banana", "cherry", "gooseberry", "kumquat", "orange",
+#"pineapple"]
+
+
+
+fruit_list = ["apple", "banana", "cherry", "gooseberry", "kumquat", "orange",
+"pineapple"]
+
+trigger = "NO"
+
+while trigger != "STOP":
+    fruit = (input(("Please Enter a name of a fruit :"))).lower()
+    for ctr in fruit_list:
+        if ctr == fruit:
+            print ("The index of your frint in the list is ",fruit_list.index(ctr)) 
+            trigger = (input("Do you want to try again TYPE stop to end if not key in anything: ")).upper()
+            if trigger == "STOP":
+                print("program ending")
+            break
+        else:
+            if (fruit_list.index(ctr) == len(fruit_list) -1):
+                print("fruit you key in not in list please try again")
+
+
+#Activity 9
+#Create a script that asks the user for a variable number of values and displays the sum of those values to the user.
+#The program should prompt the user for values until the user enters the word "quit" (uppercase or lowercase), display the values used in the calculation, and then display the total of those values.
+
+mylist = []
+
+trigger = "NO"
+
+while trigger != "quit":
+    number = int(input(("key in a number: ")))
+    mylist.append(number)
+    trigger = (input("Do you want to try again quit stop to end if not key in anything: ")).lower()
+
+print("numbers keyed are in: ", ','.join(map(str,mylist)))     
+print("sum of all the number key in is : ", sum(mylist))
+
+#Activity 10
+#Write a script that asks the user for an integer value and then displays the multiplication table of that input number from 1 through the integer squared.
+
+num = int(input("Enter an integer "))
+multirange = range(1,num+1)
+for ctr in multirange:
+    result = num * ctr
+    print(num," * ",ctr," = ",result)
+
+
+#Activity 11
+#Create a script that identifies all prime numbers between 0 and 100.
+
+
+print("listing all Prime numebrs from 0 to 100 ")
+for num in range(0, 101):
+   if num > 1:
+       for i in range(2, num):
+           if (num % i) == 0:
+               break
+       else:
+           print(num)
+
+
+
+
+#Activity 12
+#Write a script that calculates the greatest common denominator between two numbers.
+#For example, given the numbers 18 and 27, the greatest common denominator is 9.
+
+x = int(input("enter first number : "))
+y = int(input("enter second number : "))
+
+
+if x > y:
+    z = y
+else:
+    z = x
+for i in range(1, z + 1):
+    if((x % i == 0) and (y % i == 0)):
+        gcd = i
+
+print("Greatest common decmonitor of first number", x , " and second number",y , "is", gcd)
+
+
+
+#Activity 13
+#Write a Python script that computes the frequency of each digit in a given integer.
+
+number=int(input("input a number :"))
+
+for i in range(0,10):
+    count=0;
+    temp=number;
+    while temp>0:
+        lastDigit=temp%10
+        if lastDigit==i:
+            count=count+1
+        temp=temp//10;
+    if count>0:
+        print(i,"occurs",count, "times")
+
+
+
+#Activity 14
+
+#Write a script that calculates the lowest common multiple of two given integers.
+
+#For example, given the values 4 and 6, the lowest common multiple is 12.
+
+x = int(input("enter first number : "))
+y = int(input("enter second number : "))
+
+#z is to get the greater number for loop
+if x > y:
+    z = x
+else:
+    z = y
+
+while(1):
+    if((z % x == 0) and (z % y == 0)):
+        lcm = z
+        break
+    z += 1
+
+
+print("Lowest common mulitiple of first number", x , " and second number",y , "is", lcm)
+
+
+
+
+#Activity 15
+#Write a Python script that determines if an input number can be expressed as the sum of two prime numbers.
+
+Number = int(input('Enter the Number : '))
+arr = []
+
+# find prime numbers from activity 11
+for num in range(0, Number):
+   if num > 1:
+       for i in range(2, num):
+           if (num % i) == 0:
+               break
+       else:
+           arr.append(num)
+
+z = 0
+for i in range(len(arr)):
+    for j in range(i + 1, len(arr)):
+        # if condition is True Print numbers
+        if arr[i] + arr[j] == Number:
+            z = 1
+            print(arr[i] , " and " , arr[j] , " are prime numbers when added gives " , Number)
+            break
+if z == 0:
+    print("No Prime numbers can give sum of ",Number)
+
+
+
+
+
+
+
