@@ -1,0 +1,41 @@
+#Gerald Heng, 10/08/2022
+
+myset = {10,7,13,12,15,19}
+print("Original set:", myset)
+count =0
+
+
+
+trigger = "NO"
+
+while trigger != "quit":
+    
+    val = int(input(("Please Enter a value:")))
+    trigger = input(' "add" , "remove" or "quit" : ').lower()
+    while trigger not in ["add", "remove", "quit"]:
+        print("Invalid Selection: Please enter your choice again")
+        trigger = input(' "add" , "remove" or "quit" : ').lower()
+    
+        
+    for ctr in myset:
+        if ctr == val:
+            if trigger == "add":
+                print("number already exist")
+                break
+            if trigger == "remove":
+                myset.remove(val)
+                break
+        else:
+            if (count == len(myset) -1):
+                if trigger == "add":
+                    myset.add(val)
+                    break
+                if trigger == "remove":
+                    print("number does not exist")
+                    break
+        count += 1
+    count =0
+
+    
+print("updated set:", myset)
+           
