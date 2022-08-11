@@ -51,7 +51,7 @@ print("the lenthg of the message is", count)
 mylist = []
 a = ["a", "bc", "rye", "hello", "c", ""]
 for ctr in a:
-    if (len(ctr) > 2):
+    if (len(ctr) >= 2):
         mylist.append(ctr)
 print(mylist)      
 
