@@ -1,0 +1,115 @@
+##REPEATED QUESTIONS ARE IN OTHER FILES
+
+
+
+
+#Activity 6
+#Create a computer program that completes the following tasks:
+
+#It prompts the user for a series of 5-10 integers.
+#The user must be prompted for a minimum of 5 numbers.
+#After the user has entered 5 numbers, the program should allow the user to stop entry or enter another number.
+#When the user chooses to stop or after 10 numbers have been entered, the program stops prompting for values and performs the following calculations:
+#the product of the integers
+#the average of the integers
+#the sum of the integers
+#the min of the integers
+#the max of the integers
+#After performing the calculations, the program should display the following to the user:
+#the values the user entered
+#each of the calculations, using a phrase that identifies the value
+
+#Do not use the built-in sum, min, or max functions.
+
+num = []
+while len(num) < 5:
+    num.append(int(input("Eneter a num: ")))
+
+trigger = input("Would you like to continue entering a value?('Yes'or 'No'): ").lower()
+
+
+while trigger not in ["yes", "no", ]:
+    print("Invalid Selection: Please enter your choice again")
+    trigger = input("Would you like to continue entering a value?('Yes'or 'No'): ").lower()
+
+
+while trigger == 'yes' and len(num) < 10:
+    num.append(int(input("Eneter a num: ")))
+    if (len(num) != 10 ):
+        trigger = input("continue?('Yes'or 'No'): ").lower()
+
+prd = 0
+average = 0
+sum = 0
+min = 9999999999999
+max = -9999999999999
+for i in num:
+    if prd == 0:
+        prd = i
+    else:
+        prd *= i
+    sum += i
+    if i < min:
+        min = i
+    if i > max:
+        max = i
+
+average = sum / len(num)
+print("The numbers entered are: ", num)
+print("product: ", prd)
+print("Avergae :", average)
+print("sum :", sum)
+print("min : ", min)
+print("max :", max)
+
+
+
+
+
+#Activity 7
+#Create a program that takes an input list of strings, identifies all the strings with two or
+#more characters, and stores the results in another list. For example, the following list
+#a = ["a", "bc", "rye", "hello", "c", ""]
+#would produce the following output:
+#["bc", "rye", "hello"]
+
+
+#a = ["a", "bc", "rye", "hello", "c", ""]
+
+
+
+mylist = []
+a = ["a", "bc", "rye", "hello", "c", ""]
+for ctr in a:
+    if (len(ctr) >= 2):
+        mylist.append(ctr)
+print(mylist)      
+
+
+
+
+
+#Activity 8
+#Write a computer program using the steps below:
+
+#Create a dictionary with at least three key/value pairs.
+#Ask the user for a value.
+#Display all key/value pairs in the dictionary that include the user-specified value.
+#If the value does not exist in the dictionary, display a user-friendly error message.
+#For example:
+
+#dictionary: freq_count = {"hello":4,"world":4,"I":1,"am": 2,"Martha:"3"}
+#user input: 4
+#output: {"hello":4,"world":4}
+
+
+
+freq_count = {"hello":4,"world":4,"I":1,"am": 2,"Martha": 3}
+usr=int(input("Please input an integer: "))
+c=0
+for i,j in freq_count.items():
+              if j==usr:
+                print("{",i,":",j,"}")
+                c+=1
+if c==0:
+    print("no such value")
