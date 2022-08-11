@@ -1,0 +1,22 @@
+word=input("enter text paragraph : ")
+x=input("enter word to check its frequency: ")
+words=word.split()
+word_freq = dict()
+ 
+
+for ctr in words:
+    if ctr not in word_freq:
+        word_freq[ctr] = 1
+    else:
+        word_freq[ctr] += 1
+
+
+print(" frequency of", x , "is", word_freq[x])    
+
+alpha=sorted(word_freq.items())
+print("alphabetically stort :", alpha)
+
+
+freq=sorted(word_freq.items(), key=lambda x: x[1], reverse=True)
+print("frequency sort : ", freq)
+    
