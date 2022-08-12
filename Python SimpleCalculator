@@ -1,0 +1,41 @@
+class SimpleCalculator():
+    def __init__(self,x,y):
+        self.num1 = x
+        self.num2 = y
+    def add(self):
+        return self.num1 + self.num2
+    def sub(self):
+        return self.num1 - self.num2
+    def multiply(self):
+        return self.num1 * self.num2
+    def divide(self):
+        return self.num1 / self.num2
+
+
+
+#Can change to quit and exit and to quit but would be easier and more concise to just pick a number
+
+while True:
+    i = int(input("input First number : "))
+    j = int(input("input Second number : ")) 
+  
+    choice = int(input("Please select one of the following : \n1. Add \n2. Sub \n3. Multiply \n4. Divide \n5. Quit/Exit\nChoice: ")) 
+    
+    cal=SimpleCalculator(i,j)
+    
+    print("\n")
+    if choice == 1:
+        print(i, "+" ,j ,"= ",cal.add())
+    elif choice == 2:
+        print(i, "-" ,j ,"= ",cal.sub())
+    elif choice == 3:
+        print(i, "*" ,j ,"= ",cal.multiply())    
+    elif choice == 4:
+        print(i, "/" ,j ,"= ",round(cal.divide(),2))
+    elif choice == 5:
+        print("Thank you come again!!!")
+        break
+    else:
+        print("Invalid option TRY again!@!@!@!@!@! ") 
+             
+    print("********************************************************")
