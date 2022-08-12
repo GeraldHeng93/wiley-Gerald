@@ -1,0 +1,48 @@
+class computer:
+    def __init__(self, m, c, w, t):
+        self.model = m
+        self.cpu = c
+        self.weight = w
+        self.thickness = t
+
+    def introduce_self(self):
+        print("My name is " + self.model)
+        print("I contain the following processor : " , self.cpu)
+        print("This is my weight : ",  self.weight , "kg")
+        print("I am this thick : " , self.thickness , "cm")
+        
+class location():
+    def __init__(self, l, a , p):
+        self.location = l
+        self.aircon = a
+        self.projector = p
+        
+    def displayLocation(self):
+        print("location: " , self.location)
+        print("Aircon : " , self.aircon)
+        print("Contains Projector :" , self.projector)
+        
+
+
+c1 = computer("lenovo ", "i7-1200", 5, 4)
+c2 = computer("acer", "i7-1201", 4, 3)
+c3 = computer("asus ", "i7-1202", 3, 2)
+c4 = computer("Apple ", "i7-1203", 6, 3)
+
+l1 = location("NTU","YES","NO")
+
+c1.introduce_self()
+print("\n")
+c2.introduce_self()
+print("\n")
+c3.introduce_self()
+print("\n")
+c4.introduce_self()
+
+print("\n")
+c1.pcLocation = l1
+c1.pcLocation.displayLocation()
+
+
+
+
