@@ -1,0 +1,136 @@
+#GERALD HENG
+#12/8/2022
+
+class FileItem:
+    def __init__(self, n, p , o , s, d):
+        self.name = n
+        self.permission = p
+        self.owner = o
+        self.size = s
+        self.dateCreated = d
+    def display(self):
+        print("File name:", self.name) 
+        print("File Permission:", self.permission) 
+        print("File owner:", self.owner) 
+        print("File name:", self.size) 
+        print("Date Created:", self.dateCreated) 
+        
+class CsvFile(FileItem):
+    def __init__(self, n, p , o , s,d,dl):
+        FileItem.__init__(self, n, p , o , s, d)
+        self.delimit = dl
+        
+    def display(self):
+        FileItem.display(self)
+        print("Delimitator used:", self.delimit) 
+        
+        
+class JpgFile(FileItem):
+    def __init__(self, n, p , o , s,d,pd):
+        FileItem.__init__(self, n, p , o , s, d)
+        self.pixeldensity = pd
+        
+    def display(self):
+        FileItem.display(self)
+        print("Pixel density:", self.pixeldensity) 
+        
+        
+
+class Mp3File(FileItem):
+    def __init__(self, n, p , o , s,d,t):
+        FileItem.__init__(self, n, p , o , s, d)
+        self.songTime = t
+        
+    def display(self):
+        FileItem.display()
+        print("song Duration:", self.songTime) 
+
+
+
+class Directory(FileItem):
+    def __init__(self, n, p , o , s, d):
+        FileItem.__init__(self, n, p , o , s, d)
+        self.contents = []
+        
+    def addfiles(self,files):
+        self.contents.append(files)
+        
+    def removefiles(self,files):
+        self.remove(files)
+        
+    def display(self):
+        print("\n")
+        FileItem.display(self)
+        print("\n")
+        print("Displaying items in directory", self.name)
+        print("\n")
+        for i in self.contents:
+            i.display()
+
+
+    
+    
+    
+    
+
+    
+    
+c1 = CsvFile("CSV1", "editable", "geraldheng", "1123", "12/08/2022",",")
+c2 = CsvFile("CSV2", "editable", "geraldheng", "1123", "12/08/2022",",")
+c3 = CsvFile("CSV3", "editable", "geraldheng", "1123", "12/08/2022",",")
+c4 = CsvFile("CSV4", "editable", "geraldheng", "1123", "12/08/2022",",")
+c5 = CsvFile("CSV5", "editable", "geraldheng", "1123", "12/08/2022",",")
+j1 = JpgFile("Jpg1", "readonly", "geraldheng", "1123", "12/08/2022", "50 PPI")
+j2 = JpgFile("Jpg2", "readonly", "geraldheng", "1123", "12/08/2022", "50PPI")
+j3 = JpgFile("Jpg3", "readonly", "geraldheng", "1123", "12/08/2022", "50PPI")
+j4 = JpgFile("Jpg4", "readonly", "geraldheng", "1123", "12/08/2022", "50PPI")
+j5 = JpgFile("Jpg5", "readonly", "geraldheng", "1123", "12/08/2022", "50PPI")
+m1 = Mp3File("Mp3.1", "readonly", "geraldheng", "1123", "12/08/2022", "120Sec")
+m2 = Mp3File("Mp3.2", "readonly", "geraldheng", "1123", "12/08/2022", "120Sec")
+m3 = Mp3File("Mp3.3", "readonly", "geraldheng", "1123", "12/08/2022", "120Sec")
+m4 = Mp3File("Mp3.4", "readonly", "geraldheng", "1123", "12/08/2022", "120Sec")
+m5 = Mp3File("Mp3.5", "readonly", "geraldheng", "1123", "12/08/2022", "120Sec")
+            
+d1 = Directory("desktop", "editable", "geraldheng", "1123", "12/08/2022")
+d2 = Directory("wiley", "editable", "geraldheng", "1123", "12/08/2022")
+d3 = Directory("python", "editable", "geraldheng", "1123", "12/08/2022")
+d4 = Directory("week1", "editable", "geraldheng", "1123", "12/08/2022")
+d5 = Directory("week2", "editable", "geraldheng", "1123", "12/08/2022")
+
+
+
+d5.addfiles(c1)
+d5.addfiles(c2)
+
+
+d4.addfiles(c3)
+d4.addfiles(c4)
+
+d3.addfiles(j1)
+d3.addfiles(j2)
+d3.addfiles(d4)
+d3.addfiles(d5)
+
+
+d2.addfiles(j3)
+d2.addfiles(j4)
+d2.addfiles(d3)
+
+
+d1.addfiles(m1)
+d1.addfiles(m2)
+d1.addfiles(m3)
+d1.addfiles(d1)
+
+
+d2.display()
+
+
+
+
+
+
+
+
+
+
