@@ -1,0 +1,133 @@
+#activity 0
+
+class computer:
+    def __init__(self, m, c, w, t):
+        self.model = m
+        self.cpu = c
+        self.weight = w
+        self.thickness = t
+
+    def introduce_self(self):
+        print("My name is " + self.model)
+        print("I contain the following processor : " , self.cpu)
+        print("This is my weight : ",  self.weight , "kg")
+        print("I am this thick : " , self.thickness , "cm")
+        
+ #activity 1
+       
+class laptop(computer):
+    def __init__(self,m,c,w,t,s,q):
+        computer.__init__(self, m, c, w, t)
+        self.screensize = s
+        self.screenquality=q
+    
+    def introduce_self(self):
+        computer.introduce_self(self)
+        print("I have screen size of:", self.screensize, "inch")
+        print("My screen quality is:", self.screenquality, "Resolution")
+
+
+
+l1 = laptop("lenovo ", "i7-1200", 5, 4,17,"1080p")
+l2 = laptop("acer", "i7-1201", 4, 3,15,"4k")
+
+l1.introduce_self()
+print("\n")
+l2.introduce_self()
+print("\n")
+
+
+
+
+
+#activity 3
+
+class phone(computer):
+    def __init__(self,m,c,w,t,s,q,b,sc):
+        computer.__init__(self, m, c, w, t)
+        self.screensize = s
+        self.screenquality=q
+        self.battery=b
+        self.simcard= sc
+        
+    
+    def introduce_self(self):
+        computer.introduce_self(self)
+        print("My screen quality is:", self.screenquality, "Resolution")
+        print("My screen quality is:", self.battery, "MAH")
+        print("My screen quality is:", self.simcard, "slot avaliable")
+        
+#activity 2
+
+class foldphone(phone):
+    def __init__(self,m,c,w,t,s,q,b,sc,f):
+        phone.__init__(self,m,c,w,t,s,q,b,sc)
+        self.fold = f
+        
+        
+    
+    def introduce_self(self):
+        phone.introduce_self(self)
+        print("My screen can fold:", self.fold)
+        
+print("\n")       
+fp1 = foldphone("lenovo ", "snapdragon", 5, 4,17,"1080p",1500,2,"YES")
+fp1.introduce_self()
+print("\n")  
+
+
+
+        
+        
+        
+        
+class tablet(computer):
+    def __init__(self,m,c,w,t,s,q,pf,wt):
+        computer.__init__(self, m, c, w, t)
+        self.screensize = s
+        self.screenquality=q
+        self.platform = pf
+        self.warranty = wt
+    
+    def introduce_self(self):
+        computer.introduce_self(self)
+        print("I have screen size of:", self.screensize, "inch")
+        print("My screen quality is:", self.screenquality, "Resolution")
+        print("My platform is:", self.platform)
+        print("Warranty coverage:", self.warranty, "years")
+        
+ 
+p1 = phone("lenovo ", "snapdragon", 5, 4,17,"1080p",1500,2)
+t1 = tablet("iphone 14", "apple m1", 4, 3,15,"4k","andriod",2)
+
+p1.introduce_self()
+print("\n")
+t1.introduce_self()
+print("\n")       
+
+
+# activity 6
+
+class foldPhoneWithjack(foldphone):
+    def __init__(self,m,c,w,t,s,q,b,sc,f,j):
+        foldphone.__init__(self,m,c,w,t,s,q,b,sc,f)
+        self.jack = j
+        
+
+    def introduce_self(self):
+        phone.introduce_self(self)
+        print("My phone has headphone jack:", self.jack)   
+
+
+    
+z1 = foldPhoneWithjack("lenovo ", "snapdragon", 5, 4,17,"1080p",1500,2,"YES","YES")
+z1.introduce_self()
+print("\n")  
+print(isinstance(z1,foldPhoneWithjack))
+print(isinstance(z1,foldphone))
+print(isinstance(z1,computer))
+
+
+
+
+
