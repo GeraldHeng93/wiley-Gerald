@@ -1,0 +1,36 @@
+Devops
+Practices which aims to improve the company’s speed productivity in software development.
+Middle man between operation and development team. This help to match expertise between the 2 groups to increase efficiency. This will lead to improve quality and performance of the end product , better end customer experience which will reduce cost as increase in collaboration will reduce issues during development phase
+
+-make use of automation and cloud computing
+
+
+WaterFall methodology
+Project management approach that emphasize more of a linear approach.
+This linear approach allow for a simple approach of the process and ensure that each phases is done to the best. This is to allow a forward tracking system (do not have to backtrack to previous stages once its done its over).
+
+Agile methodology approach
+Design requirements -> iteration ->Deployment-> Feedback
+Iterative method  this helps in fast pace and adaptability since the benefit of iteration is that you can adjust as you go along rather than following a linear path.
+With this method it allows for benefits/pros to be shown in the development phase and to allow progressive updates 
+This therefore have “sprint period” which is usually in 2-3 weeks 
+Each sprint there will be an aim that will be discuss at the start. This will allow the team to reach the aim. And if the sprint is completed this will allow teams to see in the presentation. If it fails then thie knowledge gain can be use for future to gauge the different timeline and or experience gain 
+
+This type of sprints allow customer to see progressive updates. Therefore agile methodology priorities customer involvement 
+
+
+
+Devops practices
+
+Continuous integration/deployment – small changes for upgrades at a time .
+ Configuration management
+Automated testing
+Monitoring – check on systems to know the issues 
+Containers/orchestration
+Version control
+Cloud computing
+
+
+
+
+
