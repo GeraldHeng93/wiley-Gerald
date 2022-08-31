@@ -1,0 +1,125 @@
+Incident Management
+Incident is An unplanned interruption of a service, or reduction in the quality of a service
+Incident management plan
+• Clearly describe the issue
+• How detected or who manually triggered the incident
+• Date and time the incident was reported
+• Description of the incident
+• Incident category
+• Level of the incident
+
+Levels of Incident
+SEV 1 - A critical disruption to the business that requires public notification and coordination with the executive teams.
+SEV 2 - Major incident with significant impact on customers' ability to use the service
+SEV 3 - A minor incident with low impact that require immediate attention
+SEV 4 - A minor issue with no impact on the customers' ability to use the service
+
+Incident management process
+-Identify key roles and clear chain of command
+
+-Define responsibilities
+
+-Capture response efforts for future analysis and learning
+
+-Communicate
+
+
+
+
+-Benefits of Incident Management Planning
+• Clearly defining a chain of command.
+• Everyone involved having a single person to report to.
+• Defined communications channels for clear and rapid communication.
+• Provide a systematic procedure to follow.
+• Clear focus on recovery of the business capabilities.
+A well incident management plan will lead to :
+• Faster incident resolution 
+• Reduced costs and/or revenue loss
+• Improved internal/external communications
+• Continuous improvement and learning
+
+Managed by objectives
+Establish measurable objectives for the response
+Issue assignments in a specific and timeboxed manner
+
+Accountability
+
+• Clearly identify yourself and your role
+• Response operations need to be coordinated as directed by the
+Incident Commander.
+• Personal accountability for actions
+• Track changes to the normal operations of the business
+• Span of Control monitored to adequately supervise areas
+
+Scribe: assist IC, captures communication, actions and discussions from conference bridge.
+        capture all information for future use.
+    
+Incident commanders:
+  Responsible for overall coordination
+• Keeps incident moving towards resolution
+
+Operations lead: work with IC to develop and solve the incident , recommend changes and solution  to IC, 
+Coordinate operational team to restore service. Ask SME for help if needed 
+
+Communications lead: responsible for internal & external comm. 
+updates to status page and other media, maintain incident documentation
+
+Planning lead: supports OL & IC, capture long-term issues, create tickets, arranging handoffs,tracking system divergence from SLO,
+
+SME:  advise service-specific knowledge may not normally be involved in ops
+How deal with an incident
+-identifying impacts 
+Service unavailable
+SLO/SLA in violation 
+Monetary
+Regulatory 
+Incident cycle 
+Identify -> diagnose -> stabilize -> verify 
+Incident management checklist used to ensure the whole incident manegemnt is done properly
+
+
+Postmortem 
+Is part of incident response process. It a written report to understand t he problem and the mitigate/resolve the issue and find out the root cause. This allows for follow up actions to prevent such incidents again 
+Failure is an opportunity to learn and improve 
+
+Try not to blame others. However it’s the human tendancy to blame people
+Collaboration
+-boost team comms (open to discussion of incident and multipe insights into mistakes, improved morale)
+Blameless postmortem
+-embrace risk
+-Encourage honesty and acceptance of failure
+-Removing the fear of consequences frees people up to be honest about their misunderstandings
+Share information and build a timeline
+-Make sure everyone’s on the same page about what actually happened
+-capture information during incident response effect
+-focus on proactively prevent the incident 
+-use standard format for postmortem reports  
+
+
+
+
+Embracing risk
+-plan for incident
+-practice response procedure
+-error budgets 
+-opporunity for improvement
+Complexity of system gurnatees hardware failure
+Security attacks will occur 
+Databases will get coorutped
+Compoents will be updated 
+
+Alert fatigue
+-on-call rotation
+-alert fatigue (will lead to ignore alerts due to too many)
+-burnout 
+
+Continuous improvement 
+-automation
+-docuemntation
+-reducing toil
+-update SLO
+-Update monitoring/sli
+-update alerts
+
+
+
